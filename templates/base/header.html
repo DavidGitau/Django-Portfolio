@@ -1,11 +1,12 @@
 <!-- Navigation Start -->
 <!-- Header Start --> 
 
+{% load static %}
 <nav class="navbar navbar-expand-lg  main-nav " id="navbar">
 	<div class="container">
 	  <a class="navbar-brand" href="{% url 'home' %}">
-        <h2>David Gitau</h2>
-	  	{% comment %} <img src="images/logo.png" alt="" class="img-fluid"> {% endcomment %}
+        <h3 class="img-fluid">David Gitau</h3>
+	  	{% comment %} <img src="{% static 'images/logo.png'%}" alt="" class="img-fluid"> {% endcomment %}
 	  </a>
 
 	  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +16,7 @@
 		  <div class="collapse navbar-collapse" id="navbarsExample09">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item  active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-			  <li class="nav-item  active"><a class="nav-link" href="{% url 'about' %}>About</a></li>
+			  <li class="nav-item  active"><a class="nav-link" href="{% url 'about' %}">About</a></li>
 			  <li class="nav-item  active"><a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a></li>
 
 			  {% comment %} <li class="nav-item dropdown">
