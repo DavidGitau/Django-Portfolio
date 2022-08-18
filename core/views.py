@@ -13,5 +13,6 @@ def contact(request):
 def portfolio(request):
     return render(request, 'portfolio/portfolio.html')
 
+
 def portfolio_detail(request):
     return render(request, 'portfolio/portfolio-detail.html')
