@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="zxx">
+
+
+<head>
+  <meta charset="utf-8">
+  <title>Thomson-Minimal Portfolio Temaplate</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/themify/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/counto/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/owl-carousel/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/owl-carousel/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/magnific-popup/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/animated-text/animated-text.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+{% include 'base/header.html' %}
+
+{% block content %}
+{% endblock %}
+
+{% include 'base/footer.html' %}
+
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/aos/aos.js' %}"></script>
+<script src="{% static 'plugins/owl-carousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'plugins/shuffle/shuffle.min.js' %}"></script>
+<script src="{% static 'plugins/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'plugins/animated-text/animated-text.js' %}"></script>
+<script src="{% static 'plugins/counto/apear.js' %}"></script>
+<script src="{% static 'plugins/counto/counTo.js' %}"></script>
+
+ <!-- Google Map -->
+<script src="{% static 'plugins/google-map/map.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script> 
+<!-- Main Script -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</html>
+
