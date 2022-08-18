@@ -2,7 +2,16 @@ from django.shortcuts import render
 
 
 def home(request):
-    context = {
+    return render(request, 'home.html')
 
-    }
-    return render(request, 'home.html', context)
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
+def portfolio(request):
+    return render(request, 'portfolio/portfolio.html')
+
+def portfolio_detail(request):
+    return render(request, 'portfolio/portfolio-detail.html')
