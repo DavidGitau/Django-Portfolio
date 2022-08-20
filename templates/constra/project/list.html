@@ -1,0 +1,65 @@
+{% load static %}
+<section id="main-container" class="main-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="shuffle-btn-group">
+          <label class="active" for="all">
+            <input type="radio" name="shuffle-filter" id="all" value="all" checked="checked">Show All
+          </label>
+          <label for="commercial">
+            <input type="radio" name="shuffle-filter" id="commercial" value="commercial">Commercial
+          </label>
+          <label for="education">
+            <input type="radio" name="shuffle-filter" id="education" value="education">Education
+          </label>
+          <label for="government">
+            <input type="radio" name="shuffle-filter" id="government" value="government">Government
+          </label>
+          <label for="infrastructure">
+            <input type="radio" name="shuffle-filter" id="infrastructure" value="infrastructure">Infrastructure
+          </label>
+          <label for="residential">
+            <input type="radio" name="shuffle-filter" id="residential" value="residential">Residential
+          </label>
+          <label for="healthcare">
+            <input type="radio" name="shuffle-filter" id="healthcare" value="healthcare">Healthcare
+          </label>
+        </div><!-- project filter end -->
+
+
+        <div class="row shuffle-wrapper">
+          <div class="col-1 shuffle-sizer"></div>
+
+          {% for o in object_list %}
+          <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[{% for c in o.categories.all %}&quot;{{c.name|lower}}&quot;{% if forloop.counter == 1 %},{% endif %} {% endfor %}]">
+            <div class="project-img-container">
+              <a class="gallery-popup" href="{{o.image.url}}">
+                <img class="img-fluid" src="{{o.image.url}}" alt="project-image">
+                <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+              </a>
+              <div class="project-item-info">
+                <div class="project-item-info-content">
+                  <h3 class="project-item-title">
+                    <a href="{% url 'home:project-detail' o.id %}">{{o.name}}</a>
+                  </h3>
+                  <p class="project-cat">{% for c in o.categories.all %} {{c.name}}{% if forloop.counter == 1 %},{% endif %} {% endfor %}</p>
+                </div>
+              </div>
+            </div>
+          </div><!-- shuffle item 1 end -->
+          {% endfor %}
+
+        </div><!-- shuffle end -->
+      </div>
+
+      <div class="col-12">
+        <div class="general-btn text-center">
+          <a class="btn btn-primary" href=" {% url 'home:project' %} ">View All Projects</a>
+        </div>
+      </div>
+
+    </div><!-- Content row end -->
+
+  </div><!-- Conatiner end -->
+</section><!-- Main container end -->

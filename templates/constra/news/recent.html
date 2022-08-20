@@ -1,0 +1,21 @@
+<div class="widget recent-posts">
+    <h3 class="widget-title">Recent Posts</h3>
+    <ul class="list-unstyled">
+        {% for o in news_list %}
+        {% if forloop.revcounter < 4 %}
+        <li class="d-flex align-items-center">
+        <div class="posts-thumb">
+            <a href="#"><img loading="lazy" alt="img" src="{{o.image.url}}"></a>
+        </div>
+        <div class="post-info">
+            <h4 class="entry-title">
+            <a href="#">{{o.name}}</a>
+            </h4>
+        </div>
+        </li><!-- 1st post end-->
+        {% endif %}
+        {% endfor %}
+
+    </ul>
+</div><!-- Recent post end -->
+{% include 'constra/news/widgets.html' %}

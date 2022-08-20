@@ -1,0 +1,22 @@
+{% load static %}
+<section id="facts" class="facts-area dark-bg">
+  <div class="container">
+    <div class="facts-wrapper">
+        <div class="row">
+        {% for f in facts %}
+          <div class="col-md-3 col-sm-6 ts-facts">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="{{f.image.url}}" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="{{f.number}}">0</span></h2>
+                <h3 class="ts-facts-title">{{f.name}}</h3>
+              </div>
+          </div><!-- Col end -->
+          {% endfor %}
+        </div> <!-- Facts end -->
+    </div>
+    <!--/ Content row end -->
+  </div>
+  <!--/ Container end -->
+</section><!-- Facts end -->

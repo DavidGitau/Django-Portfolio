@@ -1,0 +1,68 @@
+{% extends 'constra/base/base.html' %}
+{% load static %}
+{% block content %}
+
+<div id="banner-area" class="banner-area" style="background-image:url({% static 'images/banner/banner1.jpg'%})">
+  <div class="banner-text">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+              <div class="banner-heading">
+                <h1 class="banner-title">Pricing</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                      <li class="breadcrumb-item"><a href="{% url 'home:home' %}">Home</a></li>
+                      <li class="breadcrumb-item"><a href="{% url 'home:home' %}">company</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Pricing</li>
+                    </ol>
+                </nav>
+              </div>
+          </div><!-- Col end -->
+        </div><!-- Row end -->
+    </div><!-- Container end -->
+  </div><!-- Banner text end -->
+</div><!-- Banner area end --> 
+
+<section id="main-container" class="main-container">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-12">
+        <h2 class="section-title">Grab the Packages</h2>
+        <h3 class="section-sub-title">Pricing</h3>
+      </div>
+    </div>
+    <!--/ Title row end -->
+
+    <div class="row">
+
+      {% for o in object_list %}
+      <div class="col-lg-4 col-md-6">
+        <div class="ts-pricing-box">
+          <div class="ts-pricing-header">
+            <h2 class="ts-pricing-name">{{o.name}}</h2>
+            <h2 class="ts-pricing-price">
+              <span class="currency">$</span><strong>{{o.price}}</strong><small>/Month</small>
+            </h2>
+          </div><!-- Pricing header -->
+          <div class="ts-pricing-features">
+            <ul class="list-unstyled">
+              {% for f in o.features.all %}
+              <li>{{f.name}}</li>
+              {% endfor %}
+            </ul>
+          </div><!-- Features end -->
+          <div class="plan-action">
+            <a href="#" class="btn btn-dark">Order Now</a>
+          </div>
+        </div><!-- Plan 1 end -->
+      </div><!-- Col end -->
+      {% endfor %}
+
+    </div>
+    <!--/ Content row end -->
+
+  </div><!-- Conatiner end -->
+</section><!-- Main container end -->
+
+
+{% endblock content %}

@@ -1,0 +1,44 @@
+{% for o in object_list %}
+<div class="post">
+    <div class="post-media post-image">
+    <img loading="lazy" src="{{o.image.url}}" class="img-fluid" alt="post-image">
+    </div>
+
+    <div class="post-body">
+    <div class="entry-header">
+        <div class="post-meta">
+        <span class="post-author">
+            <i class="far fa-user"></i><a href="#"> {{o.author}}</a>
+        </span>
+        <span class="post-cat">
+            <i class="far fa-folder-open"></i><a href="#"> News</a>
+        </span>
+        <span class="post-meta-date"><i class="far fa-calendar"></i> {{o.date}}</span>
+        <span class="post-comment"><i class="far fa-comment"></i> {{o.comments}}<a href="#"
+            class="comments-link">Comments</a></span>
+        </div>
+        <h2 class="entry-title">
+        <a href="{% url 'home:news-detail' o.id %}">{{o.name}}</a>
+        </h2>
+    </div><!-- header end -->
+
+    <div class="entry-content">
+        <p>{{o.about | truncatewords:"65"}}.</p>
+    </div>
+
+    <div class="post-footer">
+        <a href="{% url 'home:news-detail' o.id %}" class="btn btn-primary">Continue Reading</a>
+    </div>
+
+    </div><!-- post-body end -->
+</div><!-- 1st post end -->
+{% endfor %}
+<nav class="paging" aria-label="Page navigation example">
+    <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-double-left"></i></a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a></li>
+    </ul>
+</nav>
