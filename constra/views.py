@@ -71,25 +71,27 @@ def typography_view(request):
     return render(request, 'constra/other/typography.html')
 
 def news_detail(request, id=1):
-    object = News.objects.get(id=id)
-    if request.POST:
-        usn = request.POST['cName']
-        email = request.POST['cEmail']
-        website = request.POST['Website']
-        content = request.POST['Content']
-        post = object
-        cm = Comment.objects.create(name=usn,email=email,about=content,n_name=request.user,website=website,post=post)
-        cm.save()
-        return redirect('./')
-    comments = Comment.objects.filter(post=object)
-    object.comments_all.set(comments)
-    context = {
-        'object': object,
-        'comments': comments,
-        'news_list': News.objects.all()
-    }
-    return render(request, 'constra/news/detail.html', context)
-
+    try:
+        object = News.objects.get(id=id)
+        if request.POST:
+            usn = request.POST['cName']
+            email = request.POST['cEmail']
+            website = request.POST['Website']
+            content = request.POST['Content']
+            post = object
+            cm = Comment.objects.create(name=usn,email=email,about=content,n_name=request.user,website=website,post=post)
+            cm.save()
+            return redirect('./')
+        comments = Comment.objects.filter(post=object)
+        object.comments_all.set(comments)
+        context = {
+            'object': object,
+            'comments': comments,
+            'news_list': News.objects.all()
+        }
+        return render(request, 'constra/news/detail.html', context)
+    except:
+        return render(request, 'constra/other/404.html' ,{'msg':'That page cannot be accessed!'})
 
 # Custom Views
 class CustomList(ListView):
