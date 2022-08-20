@@ -1,4 +1,3 @@
-from attr import field
 from django import forms
 from crispy_forms.helper import FormHelper
 from django.contrib.auth.forms import UserCreationForm, SetPasswordForm
