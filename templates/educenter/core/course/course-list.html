@@ -1,0 +1,32 @@
+{% load static %}
+
+<!-- courses -->
+<section class="section">
+  <div class="container">
+    <!-- course list -->
+<div class="row justify-content-center">
+  {% for list in object_list %}
+  <!-- course item -->
+  <div class="col-lg-4 col-sm-6 mb-5">
+    <div class="card p-0 border-primary rounded-0 hover-shadow">
+      <img class="card-img-top rounded-0" src="{{list.image_url.url}} " alt="course thumb">
+      <div class="card-body">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
+          <li class="list-inline-item"><a class="text-color" href="#">{{list.c_school}}</a></li>
+        </ul>
+        <a href="{% url 'user:course-single' list.id %}">
+          <h4 class="card-title">{{list.name}}</h4>
+        </a>
+        <p class="card-text mb-4">{{list.content | truncatewords:12 }}</p>
+        <a href="{% url 'user:course-single' list.id %}" class="btn btn-primary btn-sm">Apply now</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<!-- /course list -->
+  
+  </div>
+</section>
+<!-- /courses -->

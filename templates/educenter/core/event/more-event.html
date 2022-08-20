@@ -1,0 +1,31 @@
+{% load static %}
+
+<!-- more event -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="section-title">More Events</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+  <!-- event -->
+ {% for even in event_reccommend %}
+  <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+    <div class="card border-0 rounded-0 hover-shadow">
+      <div class="card-img position-relative">
+        <img class="card-img-top rounded-0" src="{{even.image_url.url}}" alt="event thumb">
+            <div class="card-date"><span>{{event.event_date | date:"d" }}</span><br>{{event.event_date | date:"F" | upper }}</div>
+      </div>
+      <div class="card-body">
+        <!-- location -->
+        <p><i class="ti-location-pin text-primary mr-2"></i>{{even.location}}</p>
+        <a href="{% url 'user:event-single' even.id %}"><h4 class="card-title">{{even.content | slice:"0:55"}}</h4></a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+  </div>
+</section>
+<!-- /more event -->

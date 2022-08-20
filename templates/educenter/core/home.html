@@ -1,0 +1,17 @@
+{% extends 'educenter/core/base.html' %}
+{% load static %}
+{% block content %}
+
+{% include "educenter/core/home/slider.html" %}
+{% include "educenter/core/home/banner.html" %}
+{% include "educenter/core/home/aboutus.html" %}
+{% include "educenter/core/course/course-list.html" %}
+{% include "educenter/core/home/cta.html" %}
+{% include "educenter/core/common/success.html" %}
+{% include "educenter/core/teacher/teacher-rec.html" %}
+{% comment %} {% include "core/common/teachers.html" %} {% endcomment %}
+{% comment %} {% include "core/home/blog.html" %} {% endcomment %}
+{% include "educenter/core/blog/reccommended-post.html" %}
+
+{% endblock content %}
+

@@ -1,0 +1,50 @@
+label {
+    font-weight: 600;
+}
+
+.first_div {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 0px;
+}
+
+.second_div {
+    display: block;
+}
+
+.it1 {
+    display: block;
+    padding-right: 10px;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 30px;
+}
+.it2 {
+    display: block;
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.it3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 30px;
+}
+
+.custom-checkbox {
+    display: block;
+    padding-right: 10px;
+    padding: 10px;
+    font-weight: 600;
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+.custom-radio {
+    background-image: blue;
+}
+
+.btngrp {
+    background-color: aqua;
+    margin-right: 100px !important;
+}

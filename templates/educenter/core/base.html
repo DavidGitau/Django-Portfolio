@@ -1,0 +1,70 @@
+educenter/{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="utf-8">
+        <title>Educenter</title>
+    
+        <!-- mobile responsive meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <!-- ** Plugins Needed for the Project ** -->
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href=" {% static 'plugins/bootstrap/bootstrap.min.css' %} ">
+        <!-- slick slider -->
+        <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+        <!-- themefy-icon -->
+        <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+        <!-- animation css -->
+        <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+        <!-- aos -->
+        <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+        <!-- venobox popup -->
+        <link rel="stylesheet" href="{% static 'plugins/venobox/venobox.css' %}">
+    
+        <!-- Main Stylesheet -->
+        <link href="{% static 'educenter/css/style.css' %}" rel="stylesheet">
+    
+        <!--Favicon-->
+        <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+        <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    
+    </head>
+</head>
+<body>
+{% include "core/common/preloader.html" %}
+
+{% if plat == 'be' %}
+{% include "educenter/be/header.html" %}
+{% else %}
+{% include "educenter/core/base/header.html" %}
+{% endif %}
+
+{% include "educenter/core/base/modal.html" %}
+{% block content %}{% endblock content %}
+{% include "educenter/core/base/footer.html" %}
+
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+<!-- slick slider -->
+<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+<!-- aos -->
+<script src="{% static 'plugins/aos/aos.js' %}"></script>
+<!-- venobox popup -->
+<script src="{% static 'plugins/venobox/venobox.min.js' %}"></script>
+<!-- filter -->
+<script src="{% static 'plugins/filterizr/jquery.filterizr.min.js' %}"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+<script src="{% static 'plugins/google-map/gmap.js' %}"></script>
+
+<!-- Main Script -->
+<script src="{% static 'educenter/js/script.js' %}"></script>
+
+</body>
+</html>

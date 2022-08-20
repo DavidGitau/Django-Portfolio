@@ -1,0 +1,33 @@
+{% extends 'educenter/core/base.html' %}
+{% load static %}
+{% comment %} {% load media %} {% endcomment %}
+{% block content %} 
+
+{% include 'educenter/core/common/title.html' %}
+
+<!-- research -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      {% for r in object_list %}
+      <!-- recharch item -->
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0">
+
+          {% comment %} <img class="card-img-top rounded-0" src="{{image.image}}" alt="research thumb"> {% endcomment %}
+          <img class="card-img-top rounded-0" src="{{r.image_url.url}}" alt="research thumb">
+
+          <div class="card-body">
+            <h4 class="card-title">{{r.name}}</h4>
+            <p class="card-text">{{r.content}}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- /research -->
+
+
+{% endblock content %}

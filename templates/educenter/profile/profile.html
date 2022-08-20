@@ -1,0 +1,15 @@
+{% extends 'educenter/core/base.html' %}
+
+{% block content %}
+<div style="background-color: black; color:rgba(245, 245, 220, 0.856);">
+    <br><br><br><br><br><br><br><br><br><br>
+</div>
+<div class="container">
+    <h1>{{user.username | title}}</h1>
+    <h1>{{user.first_name | title}}</h1>
+    <h1>{{user.last_name | title}}</h1>
+    <h1>{{user.email | title}}</h1>
+    <h1>{{user.phone | title}}</h1>
+    <a class="btn btn-primary" href="{% url 'account:edit' user.username|slugify %}">Edit</a>
+</div>
+{% endblock content %}

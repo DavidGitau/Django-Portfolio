@@ -1,0 +1,96 @@
+{% load static %}
+
+<!-- event single -->
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="section-title">{{object.name}}</h2>
+      </div>
+      <!-- event image -->
+      <div class="col-12 mb-4">
+        <img src="{{object.image_url.url}}" alt="event thumb" class="img-fluid w-100" style="height:600px; width:720px;">
+      </div>
+    </div>
+    <!-- event info -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-9">
+        <ul class="list-inline">
+          <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-location-pin text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">LOCATION</h6>
+                <p class="mb-0">{{object.location}}</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-calendar text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">DATE</h6>
+                <p class="mb-0">{{object.event_date}}</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-time text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">TIME</h6>
+                <p class="mb-0">{{object.event_time}}</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-wallet text-primary icon-md mr-2"></i>
+              <div class="text-left">
+                <h6 class="mb-0">ENTRY FEE</h6>
+                <p class="mb-0">From: ${{object.fee}}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 text-lg-right text-left">
+        <a href="#" class="btn btn-primary">Apply now</a>
+      </div>
+      <!-- border -->
+      <div class="col-12 mt-4 order-4">
+        <div class="border-bottom border-primary"></div>
+      </div>
+    </div>
+    <!-- event details -->
+    <div class="row">
+      <div class="col-12 mb-50">
+        <h3>About Event</h3>
+        <p>{{object.content | slice:"0:1100"}} </p>
+      </div>
+    </div>
+    <!-- event speakers -->
+    <div class="row">
+      <div class="col-12">
+        <h3 class="mb-4">Event Speakers</h3>
+      </div>
+      <!-- speakers -->
+      {% for s in object.e_speaker.all %}
+      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+        <div class="media">
+          <img class="mr-3 img-fluid" src="{{s.image_url.url}} " style="height:100px; width:100px;" alt="speaker">
+          <div class="media-body">
+            <h4 class="mt-0">{{s.name}}</h4>
+            Teacher
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <!-- border -->
+      <div class="col-12 mt-4 order-4">
+        <div class="border-bottom border-primary"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /event single -->

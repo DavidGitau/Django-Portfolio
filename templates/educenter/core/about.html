@@ -1,0 +1,11 @@
+educenter/{% extends 'educenter/core/base.html' %}
+{% load static %}
+{% block content %}
+{% include "educenter/core/common/title.html" %}
+{% include "educenter/core/about/about.html" %}
+{% include "educenter/core/about/funfacts.html" %}
+{% include "educenter/core/common/success.html" %}
+{% comment %} {% include "core/common/teachers.html" %} {% endcomment %}
+{% include "educenter/core/teacher/teacher-rec.html" %}
+
+{% endblock content %}  

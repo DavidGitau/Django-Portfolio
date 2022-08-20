@@ -1,0 +1,15 @@
+{% load static %}
+<!-- about -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <img class="img-fluid w-100 mb-4" src="{% static 'images/about/about-page.jpg'%}" alt="about image">
+        <h2 class="section-title">{{about.name}}</h2>
+        <p>{{about.content | slice:"0:416"}}</p>
+        <p>{{about.content | slice:"416:"}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /about -->

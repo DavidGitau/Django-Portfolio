@@ -1,0 +1,14 @@
+educenter/{% extends 'educenter/core/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %} 
+
+{% include 'educenter/core/common/title.html' %}
+
+{% include "educenter/core/teacher/teacher-list.html" %}
+
+{% if plat == 'be' %}
+{% include 'educenter/be/form.html' %}
+{% endif %}
+
+{% endblock content %}
