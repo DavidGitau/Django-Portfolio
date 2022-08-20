@@ -58,7 +58,7 @@ class EditUser(UpdateView):
 
 class ResetPass(UpdateView):
     model = User
-    user = User.objects.get(id=1)
-    form_class = ResetForm(user)
+    # user = User.objects.get(id=1)
+    # form_class = ResetForm(user)
     template_name = 'educenter/profile/edit.html'
     success_url = '../'
