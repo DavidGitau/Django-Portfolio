@@ -14,4 +14,6 @@ urlpatterns = [
     path('portfolio/', portfolio, name='portfolio'),
     path('portfolio-detail/', portfolio_detail, name='portfolio-detail'),
     path('educenter/', include('educenter.urls')),
+
+    path('be/', include('eduback.urls', namespace='edub')),
 ]

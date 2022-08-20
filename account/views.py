@@ -44,21 +44,21 @@ def logout_view(request):
     return redirect('user:home')
 
 def profile_view(request):
-    return render(request,'profile/profile.html')
+    return render(request,'educenter/profile/profile.html')
 
 def profile_edit(request):
     form = EditForm
-    return render(request, 'profile/edit.html', {'form':form})
+    return render(request, 'educenter/profile/edit.html', {'form':form})
 
 class EditUser(UpdateView):
     model = User
     form_class = EditForm
-    template_name = 'profile/edit.html'
+    template_name = 'educenter/profile/edit.html'
     success_url = '../'
 
 class ResetPass(UpdateView):
     model = User
     user = User.objects.get(id=1)
     form_class = ResetForm(user)
-    template_name = 'profile/edit.html'
+    template_name = 'educenter/profile/edit.html'
     success_url = '../'

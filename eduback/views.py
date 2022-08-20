@@ -24,7 +24,7 @@ from .forms import (
 
 
 def home(request):
-    return render(request, 'be/home.html', {})
+    return render(request, 'educenter/be/home.html', {})
 
 
 """-------------------------------------------------------

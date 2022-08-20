@@ -106,7 +106,7 @@ for i in length :
             li2[i]+'/', 
             CustomList.as_view(
                 model = li1[i],
-                template_name = 'core/'+li2[i]+'.html'
+                template_name = 'educenter/core/'+li2[i]+'.html'
             ), 
             name = li2[i]
         )      
@@ -118,7 +118,7 @@ for n in length1:
             li2[n]+'-single/<int:pk>',
             CustomDetail.as_view(
                 model = li1[n],
-                template_name = 'core/'+li2[n]+'-single.html'
+                template_name = 'educenter/core/'+li2[n]+'-single.html'
             ),
             name = li2[n]+'-single'
         )

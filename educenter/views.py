@@ -43,7 +43,7 @@ def home_view(request):
         'teacher_detail': teacher_detail,
         'blog_reccommend': blog_reccommend,
     }
-    return render(request, 'core/home.html', context)
+    return render(request, 'educenter/core/home.html', context)
 
 def about_view(request):
     about = About.objects.all()
@@ -60,7 +60,7 @@ def about_view(request):
         'teacher_list': teacher_list,
         'teacher_detail': teacher_detail,
     }
-    return render(request, 'core/about.html', context)
+    return render(request, 'educenter/core/about.html', context)
 
 def contact_view(request, li):
     title = {
@@ -71,7 +71,7 @@ def contact_view(request, li):
     context = {
         'title': title,
     }
-    return render(request, 'core/'+li, context)
+    return render(request, 'educenter/core/'+li, context)
 
 
 

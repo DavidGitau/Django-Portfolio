@@ -34,7 +34,7 @@ educenter/{% load static %}
     </head>
 </head>
 <body>
-{% include "core/common/preloader.html" %}
+{% comment %} {% include "educenter/core/common/preloader.html" %} {% endcomment %}
 
 {% if plat == 'be' %}
 {% include "educenter/be/header.html" %}

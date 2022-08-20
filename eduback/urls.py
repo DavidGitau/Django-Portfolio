@@ -144,7 +144,7 @@ for l in length:
                 CustomCreate.as_view(
                     model = li1[l],
                     form_class = li2[l],
-                    template_name = f"core/{li0[l]}.html", 
+                    template_name = f"educenter/core/{li0[l]}.html", 
                     success_url = f"#",
                 ),
                 name = f"{li0[l]}"
@@ -155,7 +155,7 @@ for l in length:
                 f"{li0[l]}/<int:id>/",
                 CustomDetail.as_view(
                     model = li1[l],
-                    template_name = f"core/{li0[l]}-single.html", 
+                    template_name = f"educenter/core/{li0[l]}-single.html", 
                 ),
                 name = f"{li0[l]}"
             )
