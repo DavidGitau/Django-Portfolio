@@ -1,0 +1,23 @@
+<!-- list -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ul class="list-unstyled">
+          {% for notice in object_list %}
+          <!-- notice item -->
+          <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
+            <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0"><span class="h2 d-block">{{notice.notice_date | date:"d" }}</span>{{notice.notice_date | date:"M,Y" | upper }}</div>
+            <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
+              <a href="{% url 'educenter:notice-single' 1 %}" class="h4 mb-3 d-block">{{notice.name}}</a>
+              <p class="mb-0">{{notice.content | truncatewords:30 }}</p>
+            </div>
+            <div class="d-md-table-cell text-right pr-0 pr-md-4"><a href="{% url 'educenter:notice-single' 1 %}" class="btn btn-primary">read more</a></div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /list -->

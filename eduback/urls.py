@@ -137,14 +137,14 @@ urlpatterns = [
     # path('teacher/', teacher, name='teacher'),
 ]
 
-for l in length:
+for l in range(12):
     urlpatterns.append(
         path(
                 f"{li0[l]}/",
                 CustomCreate.as_view(
                     model = li1[l],
                     form_class = li2[l],
-                    template_name = f"educenter/core/{li0[l]}.html", 
+                    template_name = f"educenter/be/{li0[l]}.html", 
                     success_url = f"#",
                 ),
                 name = f"{li0[l]}"

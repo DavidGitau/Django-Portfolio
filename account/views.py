@@ -41,7 +41,7 @@ def create_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('user:home')
+    return redirect('educenter:home')
 
 def profile_view(request):
     return render(request,'educenter/profile/profile.html')
