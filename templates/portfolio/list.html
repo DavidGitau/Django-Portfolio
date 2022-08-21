@@ -1,0 +1,47 @@
+<!-- POrtfolio start -->
+<section class="portfolio ">
+	<div class="container">
+		<div class="row mb-5 justify-content-center">
+	      	<div class="col-10 text-center">
+		        <div class="btn-group btn-group-toggle " data-toggle="buttons">
+		          <label class="btn active ">
+		            <input type="radio" name="shuffle-filter" value="all" checked="checked" />All Projects
+		          </label>
+		          <label class="btn">
+		            <input type="radio" name="shuffle-filter" value="django" />DJANGO
+		          </label>
+		          <label class="btn">
+		            <input type="radio" name="shuffle-filter" value="laravel" />LARAVEL
+		          </label>
+		          <label class="btn">
+		            <input type="radio" name="shuffle-filter" value="react js" />REACT JS
+		          </label>
+		           <label class="btn">
+		            <input type="radio" name="shuffle-filter" value="vue js" />VUE JS
+		          </label>
+		        </div>
+	      	</div>
+    	</div>	
+
+		<div class="row shuffle-wrapper portfolio-gallery">
+		  {% for p in projects %}
+	      <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;{{p.project_type|lower}}&quot;]">
+	        <div class="position-relative inner-box" >
+	            <div class="image position-relative ">
+	               <img src="{{p.image.url}}" alt="portfolio-image" class="img-fluid w-100 d-block">
+	                <div class="overlay-box">
+	                  <div class="overlay-inner">
+		                    <a class="overlay-content" href="{% url 'portfolio-detail' p.id %}">
+		                      <h5 class="mb-0">{{p.name}}</h5>
+		                      <p>{{p.project_type}}</p>
+		                    </a>
+	                	</div> 
+		            </div>
+		        </div>
+		      </div>
+	      </div>
+		  {% endfor %}
+	    </div>
+	</div>
+</section>
+<!-- Portfolio End -->

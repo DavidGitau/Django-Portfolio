@@ -15,11 +15,11 @@
           <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
           <li class="list-inline-item"><a class="text-color" href="#">{{list.c_school}}</a></li>
         </ul>
-        <a href="{% url 'user:course-single' list.id %}">
+        <a href="{% url 'educenter:course-single' list.id %}">
           <h4 class="card-title">{{list.name}}</h4>
         </a>
         <p class="card-text mb-4">{{list.content | truncatewords:12 }}</p>
-        <a href="{% url 'user:course-single' list.id %}" class="btn btn-primary btn-sm">Apply now</a>
+        <a href="{% url 'educenter:course-single' list.id %}" class="btn btn-primary btn-sm">Apply now</a>
       </div>
     </div>
   </div>

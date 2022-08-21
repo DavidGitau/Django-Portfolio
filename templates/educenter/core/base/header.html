@@ -16,9 +16,9 @@
         </div>
         <div class="col-lg-8 text-center text-lg-right">
           <ul class="list-inline">
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{% url 'user:notice' %}">notice</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{% url 'user:research' %}">research</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{% url 'user:scholarship' %}">SCHOLARSHIP</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{% url 'educenter:notice' %}">notice</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{% url 'educenter:research' %}">research</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{% url 'educenter:scholarship' %}">SCHOLARSHIP</a></li>
             {% if user.is_authenticated %}
             <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#logoutModal">logout</a></li>
             <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{% url 'account:profile' %}">{{user}}</a></li>
@@ -35,7 +35,7 @@
   <div class="navigation w-100">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark p-0">
-        <a class="navbar-brand" href="{% url 'user:home' %}"><img src="{% static 'images/logo-edu.png' %}" alt="logo"></a>
+        <a class="navbar-brand" href="{% url 'educenter:home' %}"><img src="{% static 'images/logo-edu.png' %}" alt="logo"></a>
         <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
           aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -44,19 +44,19 @@
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'user:home' %}">Home</a>
+              <a class="nav-link" href="{% url 'educenter:home' %}">Home</a>
             </li>
             <li class="nav-item @@about">
-              <a class="nav-link" href="{% url 'user:about' %}">About</a>
+              <a class="nav-link" href="{% url 'educenter:about' %}">About</a>
             </li>
             <li class="nav-item @@courses">
-              <a class="nav-link" href="{% url 'user:course' %}">COURSES</a>
+              <a class="nav-link" href="{% url 'educenter:course' %}">COURSES</a>
             </li>
             <li class="nav-item @@events">
-              <a class="nav-link" href="{% url 'user:event' %}">EVENTS</a>
+              <a class="nav-link" href="{% url 'educenter:event' %}">EVENTS</a>
             </li>
             <li class="nav-item @@blog">
-              <a class="nav-link" href="{% url 'user:blog' %}">BLOG</a>
+              <a class="nav-link" href="{% url 'educenter:blog' %}">BLOG</a>
             </li>
             <li class="nav-item dropdown view">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -64,21 +64,21 @@
                 Pages
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'user:teacher' %}">Teacher</a>
-                <a class="dropdown-item" href="{% url 'user:teacher-single' 1 %}">Teacher Single</a>
-                <a class="dropdown-item" href="{% url 'user:notice' %} ">Notice</a>
-                <a class="dropdown-item" href="{% url 'user:notice-single' 1 %}">Notice Details</a>
-                <a class="dropdown-item" href="{% url 'user:research' %}">Research</a>
-                <a class="dropdown-item" href="{% url 'user:scholarship' %}">Scholarship</a>
-                <a class="dropdown-item" href="{% url 'user:course-single' 1 %}">Course Details</a>
-                <a class="dropdown-item" href="{% url 'user:event-single' 1 %}">Event Details</a>
-                <a class="dropdown-item" href="{% url 'user:blog-single' 1 %}">Blog Details</a>
+                <a class="dropdown-item" href="{% url 'educenter:teacher' %}">Teacher</a>
+                <a class="dropdown-item" href="{% url 'educenter:teacher-single' 1 %}">Teacher Single</a>
+                <a class="dropdown-item" href="{% url 'educenter:notice' %} ">Notice</a>
+                <a class="dropdown-item" href="{% url 'educenter:notice-single' 1 %}">Notice Details</a>
+                <a class="dropdown-item" href="{% url 'educenter:research' %}">Research</a>
+                <a class="dropdown-item" href="{% url 'educenter:scholarship' %}">Scholarship</a>
+                <a class="dropdown-item" href="{% url 'educenter:course-single' 1 %}">Course Details</a>
+                <a class="dropdown-item" href="{% url 'educenter:event-single' 1 %}">Event Details</a>
+                <a class="dropdown-item" href="{% url 'educenter:blog-single' 1 %}">Blog Details</a>
               </div>
             </li>
             <li class="nav-item @@contact">
-              <a class="nav-link" href="{% url 'user:contact' %}">CONTACT</a>
+              <a class="nav-link" href="{% url 'educenter:contact' %}">CONTACT</a>
             </li>
-            {% if user.is_superuser %}
+            {% if educenter.is_superuser %}
             <li class="nav-item @@contact">
               <a class="nav-link" href="{% url 'backend:home' %}">BACKEND</a>
             </li>

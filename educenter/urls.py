@@ -26,7 +26,7 @@ from .views import (
     CustomDetail
 )
 
-app_name = "user"
+app_name = "educenter"
 # from .views import home_view
 
 li1 = [

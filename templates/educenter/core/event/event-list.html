@@ -15,7 +15,7 @@
           <div class="card-body">
             <!-- location -->
             <p><i class="ti-location-pin text-primary mr-2"></i>{{event.location}}</p>
-            <a href="{% url 'user:event-single' event.id %}">
+            <a href="{% url 'educenter:event-single' event.id %}">
               <h4 class="card-title">{{event.content | slice:"0:75"}}</h4>
             </a>
           </div>

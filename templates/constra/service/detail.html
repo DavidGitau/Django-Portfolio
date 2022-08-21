@@ -33,7 +33,7 @@
             <h3 class="widget-title">Solutions</h3>
             <ul class="nav service-menu">
               {% for o in object.solutions.all %}
-              <li><a href="{% url 'home:service-detail' o.id %}">{{o.name}}</a></li>
+              <li><a href="{% url 'constra:service-detail' o.id %}">{{o.name}}</a></li>
               {% endfor %}
             </ul>
           </div><!-- Widget end -->

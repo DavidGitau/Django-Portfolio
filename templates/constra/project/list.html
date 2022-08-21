@@ -41,7 +41,7 @@
               <div class="project-item-info">
                 <div class="project-item-info-content">
                   <h3 class="project-item-title">
-                    <a href="{% url 'home:project-detail' o.id %}">{{o.name}}</a>
+                    <a href="{% url 'constra:project-detail' o.id %}">{{o.name}}</a>
                   </h3>
                   <p class="project-cat">{% for c in o.categories.all %} {{c.name}}{% if forloop.counter == 1 %},{% endif %} {% endfor %}</p>
                 </div>
@@ -55,7 +55,7 @@
 
       <div class="col-12">
         <div class="general-btn text-center">
-          <a class="btn btn-primary" href=" {% url 'home:project' %} ">View All Projects</a>
+          <a class="btn btn-primary" href=" {% url 'constra:project' %} ">View All Projects</a>
         </div>
       </div>
 

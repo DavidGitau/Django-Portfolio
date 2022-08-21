@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="text-center">
-          <h1 class="text-capitalize mb-0 text-lg">Portfolio Single</h1>
+          <h1 class="text-capitalize mb-0 text-lg">Project Details</h1>
         </div>
       </div>
     </div>
@@ -19,12 +19,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6">
-				<img src="{% static 'images/portfolio/9.jpg'%}" alt="" class="img-fluid w-100">
+				<img src="{{project.image.url}}" alt="" class="img-fluid w-100">
 			</div>
 
 			<div class="col-lg-6">
 				<div class="project-info">
-					<h3 class="mb-4">Photography</h3>
+					<h3 class="mb-4">{{project.name}}</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi eligendi fugiat ad cupiditate hic, eum debitis ipsum, quos non mollitia. Commodi suscipit obcaecati et, aperiam quas vero quo, labore tempore.</p>
 
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam debitis beatae doloremque cupiditate vel repellat nam est voluptates, magnam quod explicabo fugit, quidem.</p>
@@ -33,22 +33,22 @@
 						<div class="col-lg-6">
 							<div class="info">
 								<h5 class="mb-0">Client</h5>
-								<p>Thomson</p>
+								<p>{{project.client}}</p>
 							</div>
 
 							<div class="info">
 								<h5 class="mb-0">Year</h5>
-								<p>2019</p>
+								<p>{{project.year|date:"Y"}}</p>
 							</div>
 							<div class="mt-4">
-								<a href="#" class="btn btn-main btn-small">View project</a>
+								<a href="{% url project.name|add:":home"|lower %}" class="btn btn-main btn-small">View project</a>
 							</div>
 						</div>
 
 						<div class="col-lg-6">
 							<div class="info">
 								<h5 class="mb-0">Category</h5>
-								<p>Web Design</p>
+								<p>{{project.project_type}}</p>
 							</div>
 							<div class="info">
 								<h5>Share</h5>

@@ -6,8 +6,8 @@
       <div class="logo-area">
           <div class="row align-items-center">
             <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
-                <a class="d-block" href="{% url 'home:home' %}">
-                  <img loading="lazy" src="{% static 'images/logo.png'%}" alt="Constra">
+                <a class="d-block" href="{% url 'constra:home' %}">
+                  <img loading="lazy" src="{% static 'images/logo-constra.png'%}" alt="Constra">
                 </a>
             </div><!-- logo end -->
   
@@ -38,7 +38,7 @@
                     </div>
                   </li>
                   <li class="header-get-a-quote">
-                    <a class="btn btn-primary" href="{% url 'home:contact' %}">Get A Quote</a>
+                    <a class="btn btn-primary" href="{% url 'constra:contact' %}">Get A Quote</a>
                   </li>
                 </ul><!-- Ul end -->
             </div><!-- header right end -->
@@ -62,43 +62,43 @@
                       <li class="nav-item dropdown active">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Home <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
-                            <li class="active"><a href="{% url 'home:home' %}">Home One</a></li>
-                            <li><a href="{% url 'home:home' %}">Home Two</a></li>
+                            <li class="active"><a href="{% url 'constra:home' %}">Home One</a></li>
+                            <li><a href="{% url 'constra:home' %}">Home Two</a></li>
                           </ul>
                       </li>
 
                       <li class="nav-item dropdown">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="{% url 'home:about' %}">About Us</a></li>
-                            <li><a href="{% url 'home:team' %}">Our People</a></li>
-                            <li><a href="{% url 'home:testimonial' %}">Testimonials</a></li>
-                            <li><a href="{% url 'home:faq' %}">Faq</a></li>
-                            <li><a href="{% url 'home:pricing' %}">Pricing</a></li>
+                            <li><a href="{% url 'constra:about' %}">About Us</a></li>
+                            <li><a href="{% url 'constra:team' %}">Our People</a></li>
+                            <li><a href="{% url 'constra:testimonial' %}">Testimonials</a></li>
+                            <li><a href="{% url 'constra:faq' %}">Faq</a></li>
+                            <li><a href="{% url 'constra:pricing' %}">Pricing</a></li>
                           </ul>
                       </li>
               
                       <li class="nav-item dropdown">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Projects <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="{% url 'home:project' %}">Projects All</a></li>
-                            <li><a href="{% url 'home:project-detail' 1 %}">Projects Single</a></li>
+                            <li><a href="{% url 'constra:project' %}">Projects All</a></li>
+                            <li><a href="{% url 'constra:project-detail' 1 %}">Projects Single</a></li>
                           </ul>
                       </li>
               
                       <li class="nav-item dropdown">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="{% url 'home:service' %}">Services All</a></li>
-                            <li><a href="{% url 'home:service-detail' 1 %}">Services Single</a></li>
+                            <li><a href="{% url 'constra:service' %}">Services All</a></li>
+                            <li><a href="{% url 'constra:service-detail' 1 %}">Services Single</a></li>
                           </ul>
                       </li>
               
                       <li class="nav-item dropdown">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Features <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="{% url 'home:typography' %}">Typography</a></li>
-                            <li><a href="{% url 'home:404' %}">404</a></li>
+                            <li><a href="{% url 'constra:typography' %}">Typography</a></li>
+                            <li><a href="{% url 'constra:404' %}">404</a></li>
                             <li class="dropdown-submenu">
                                 <a href="#!" class="dropdown-toggle" data-toggle="dropdown">Parent Menu</a>
                                 <ul class="dropdown-menu">
@@ -113,16 +113,16 @@
                       <li class="nav-item dropdown">
                           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">News <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu" role="menu">
-                            <li><a href="{% url 'home:news-left' %}">News Left Sidebar</a></li>
-                            <li><a href="{% url 'home:news-right' %}">News Right Sidebar</a></li>
-                            <li><a href="{% url 'home:news-detail' 1 %}">News Single</a></li>
+                            <li><a href="{% url 'constra:news-left' %}">News Left Sidebar</a></li>
+                            <li><a href="{% url 'constra:news-right' %}">News Right Sidebar</a></li>
+                            <li><a href="{% url 'constra:news-detail' 1 %}">News Single</a></li>
                           </ul>
                       </li>
                       
-                      <li class="nav-item"><a class="nav-link" href="{% url 'home:contact' %}">Contact</a></li>
+                      <li class="nav-item"><a class="nav-link" href="{% url 'constra:contact' %}">Contact</a></li>
 
                       {% if user.is_authenticated %}
-                      <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{% url 'home:logout' %}" data-toggle="modal" data-target="#logoutModal">logout</a></li>
+                      <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{% url 'constra:logout' %}" data-toggle="modal" data-target="#logoutModal">logout</a></li>
                       <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#">{{user}}</a></li>
                       {% else %}
                       <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#loginModal">log</a></li>

@@ -20,7 +20,7 @@
       <div class="card-body">
         <!-- location -->
         <p><i class="ti-location-pin text-primary mr-2"></i>{{even.location}}</p>
-        <a href="{% url 'user:event-single' even.id %}"><h4 class="card-title">{{even.content | slice:"0:55"}}</h4></a>
+        <a href="{% url 'educenter:event-single' even.id %}"><h4 class="card-title">{{even.content | slice:"0:55"}}</h4></a>
       </div>
     </div>
   </div>

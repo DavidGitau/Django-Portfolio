@@ -17,11 +17,11 @@
               <!-- author -->
               <li class="list-inline-item mr-3 ml-0" {{blog.name}}</li>
             </ul>
-            <a href="{% url 'user:blog-single' blog.id %}">
+            <a href="{% url 'educenter:blog-single' blog.id %}">
               <h4 class="card-title"> {{blog.heading|slice:"0:50"}}</h4>
             </a>
             <p class="card-text">{{blog.content|slice:"0:80"}}</p>
-            <a href="{% url 'user:blog-single' blog.id %}" class="btn btn-primary btn-sm">read more</a>
+            <a href="{% url 'educenter:blog-single' blog.id %}" class="btn btn-primary btn-sm">read more</a>
           </div>
         </div>
       </article>

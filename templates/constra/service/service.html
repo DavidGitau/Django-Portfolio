@@ -38,9 +38,9 @@
                   <img loading="lazy" src="{{o.icon.url}}" alt="service-icon">
               </div>
               <div class="ts-service-info">
-                  <h3 class="service-box-title"><a href="{% url 'home:service-detail' o.id %}">{{o.name}}</a></h3>
+                  <h3 class="service-box-title"><a href="{% url 'constra:service-detail' o.id %}">{{o.name}}</a></h3>
                   <p>{{o.about | truncatewords:'20' }}</p>
-                  <a class="learn-more d-inline-block" href="{% url 'home:service-detail' o.id %}" aria-label="service-details"><i class="fa fa-caret-right"></i> Learn more</a>
+                  <a class="learn-more d-inline-block" href="{% url 'constra:service-detail' o.id %}" aria-label="service-details"><i class="fa fa-caret-right"></i> Learn more</a>
               </div>
             </div>
         </div><!-- Service1 end -->

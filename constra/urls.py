@@ -23,7 +23,7 @@ from .models import (
     Testimonial,
 )
 
-app_name = 'home'
+app_name = 'constra'
 
 urlpatterns = [
     path('', home_view, name='home'),
