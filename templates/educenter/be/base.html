@@ -29,15 +29,15 @@
         <link href="{% static 'educenter/css/style.css' %}" rel="stylesheet">
     
         <!--Favicon-->
-        <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
-        <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+        <link rel="shortcut icon" href="{% static 'images/favicon-edu.png' %}" type="image/x-icon">
+        <link rel="icon" href="{% static 'images/favicon-edu.png' %}" type="image/x-icon">
     
     </head>
 </head>
 <body>
 {% include "educenter/core/common/preloader.html" %}
 {% include "educenter/be/header.html" %}
-{% include "educenter/core/base/modal.html" %}
+{% include "account/modal.html" %}
 {% include "educenter/core/common/title.html" %}
 {% block content %}{% endblock content %}
 {% include "educenter/core/base/footer.html" %}

@@ -55,10 +55,6 @@ length1 = [0, 1, 2, 3, 6]
 urlpatterns = [
         path('', home_view, name='home'),
         path('about/', about_view, name='about'),
-        path('account/', include('account.urls', namespace='u-account')),
-        path('be/', include('eduback.urls')),
-        path('contact/account/', include('account.urls', namespace='ac-account')),
-        path('about/account/', include('account.urls', namespace='ab-account')),
         path('contact/', contact_view, {'li':'contact.html'}, name='contact' ),
 
         # path('blog-single/<int:pk>', blog_view, {'li':'blog-single.html'}, name='blog-single' ),

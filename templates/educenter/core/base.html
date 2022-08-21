@@ -28,8 +28,8 @@ educenter/{% load static %}
         <link href="{% static 'educenter/css/style.css' %}" rel="stylesheet">
     
         <!--Favicon-->
-        <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
-        <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+        <link rel="shortcut icon" href="{% static 'images/favicon-edu.png' %}" type="image/x-icon">
+        <link rel="icon" href="{% static 'images/favicon-edu.png' %}" type="image/x-icon">
     
     </head>
 </head>
@@ -42,7 +42,7 @@ educenter/{% load static %}
 {% include "educenter/core/base/header.html" %}
 {% endif %}
 
-{% include "educenter/core/base/modal.html" %}
+{% include "account/modal.html" %}
 {% block content %}{% endblock content %}
 {% include "educenter/core/base/footer.html" %}
 

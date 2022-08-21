@@ -16,6 +16,7 @@ urlpatterns = [
 
     path('constra/', include('constra.urls')),
     path('educenter/', include('educenter.urls')),
-
-    path('be/', include('eduback.urls', namespace='edub')),
+    path('educenter/be/', include('eduback.urls')),
+    path('educenter/account/', include('account.urls')),
+    
 ]

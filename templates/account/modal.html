@@ -12,7 +12,7 @@
             </div>
             <div class="modal-body">
                 <div class="login">
-                    <form action="{% url 'home:reg' %}" class="row" method="post">
+                    <form action="./account/create-user/" class="row" method="post">
                         {% csrf_token %}
                         <div class="col-12">
                             <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
@@ -24,13 +24,13 @@
                             <input type="text" class="form-control mb-3" id="signupName" name="lName" placeholder="Last Name">
                         </div>
                         <div class="col-12">
-                            <input type="text" class="form-control mb-3" id="signupName" name="sName" placeholder="UserName">
+                            <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="UserName">
                         </div>
                         <div class="col-12">
-                            <input type="email" class="form-control mb-3" id="signupEmail" name="Email" placeholder="Email">
+                            <input type="email" class="form-control mb-3" id="signupEmail" name="eMail" placeholder="Email">
                         </div>
                         <div class="col-12">
-                            <input type="password" class="form-control mb-3" id="signupPassword" name="sPassw" placeholder="Password">
+                            <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary">SIGN UP</button>
@@ -52,16 +52,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{% url 'home:login' %}" class="row" method="post">
+                <form action="{% url 'account:login' %}" class="row" method="post">
                     {% csrf_token %}
                     <div class="col-12">
-                        <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
+                        <input type="text" class="form-control mb-3" id="loginName" name="loginNam" placeholder="Name">
                     </div>
                     <div class="col-12">
-                        <input type="text" class="form-control mb-3" id="loginName" name="Name" placeholder="Name">
-                    </div>
-                    <div class="col-12">
-                        <input type="password" class="form-control mb-3" id="loginPassword" name="Passw" placeholder="Password">
+                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">LOGIN</button>
@@ -82,7 +79,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{% url 'home:logout' %}" method="post">
+            <form action="./account/logout/" method="post">
                 {% csrf_token %}
                 <div class="col-12">
                     <button class="btn btn-primary">SIGN OUT</button>
