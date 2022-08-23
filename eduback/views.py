@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from django.utils.decorators import method_decorator
 from django.views.generic import (
     CreateView,
     DeleteView,
@@ -23,8 +24,28 @@ from .forms import (
 )
 
 
+
+# Decorator Class 
+class Decorator(object):
+    """Simple decorator class."""
+
+    def __init__(self, func):
+        self.func = func
+
+    def __call__(self, request, *args, **kwargs):
+        user = request.user
+        if not user.is_staff:
+            return redirect('educenter:home')
+        else:
+            return self.func(request, *args, **kwargs)
+
+@Decorator
 def home(request):
-    return render(request, 'educenter/be/home.html', {})
+    # check(request)
+    user = request.user
+    if not user.is_staff:
+        return redirect('educenter:home')
+    return render(request, 'educenter/be/home.html', {'plat' : 'backend'})
 
 
 """-------------------------------------------------------
@@ -34,16 +55,26 @@ def home(request):
 -------------------------------------------------------"""
 
 class CustomCreate(CreateView, ListView):
-    # model = AboutForm
-    # form_class = AboutForm
-    # template_name = 'be/about.html'
-    # fields = '__all__'
+    @method_decorator(Decorator)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['plat'] = 'be'
+        context['plat'] = 'backend'
 
         return context
 
 class CustomDetail(DetailView):
-    pass
+    @method_decorator(Decorator)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['plat'] = 'backend'
+        context['platd'] = 'backend-d'
+
+        return context

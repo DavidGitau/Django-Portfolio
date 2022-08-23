@@ -22,11 +22,11 @@
           <!-- author -->
           <li class="list-inline-item mr-3 ml-0">{{rec.name}}</li>
         </ul>
-        <a href="{% url 'educenter:blog-single' rec.id %}">
+        <a href="{% url plat|add:':blog-single' rec.id %}">
           <h4 class="card-title">{{rec.heading | slice:"0:50"}}</h4>
         </a>
         <p class="card-text">{{rec.content | slice:"0:80"}}</p>
-        <a href="{% url 'educenter:blog-single' rec.id %}" class="btn btn-primary btn-sm">read more</a>
+        <a href="{% url plat|add:':blog-single' rec.id %}" class="btn btn-primary btn-sm">read more</a>
       </div>
     </div>
   </article>

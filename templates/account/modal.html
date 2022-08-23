@@ -12,7 +12,7 @@
             </div>
             <div class="modal-body">
                 <div class="login">
-                    <form action="./account/create-user/" class="row" method="post">
+                    <form action="{% url 'account:create-user'%}" class="row" method="post">
                         {% csrf_token %}
                         <div class="col-12">
                             <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
@@ -79,7 +79,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="./account/logout/" method="post">
+            <form action="{% url 'account:logout'%}" method="post">
                 {% csrf_token %}
                 <div class="col-12">
                     <button class="btn btn-primary">SIGN OUT</button>

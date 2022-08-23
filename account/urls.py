@@ -7,5 +7,5 @@ urlpatterns = [
     path('create-user/', create_view, name='create-user'),
     path('logout/', logout_view, name='logout'),
     path('profile/', profile_view, name='profile'),
-    path('edit/<slug:slug>/', EditUser.as_view(), name='edit')
+    path('edit/<int:pk>/', EditUser.as_view(), name='edit')
 ]

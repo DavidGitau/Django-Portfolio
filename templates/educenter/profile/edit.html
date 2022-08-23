@@ -1,9 +1,9 @@
 {% extends 'educenter/core/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<br><br><br><br><br><br><br><br><br><br>
+{% include 'educenter/core/common/title.html' %}
 <div class="container">
-
+    <br><br>
     {% crispy form form.helper %}
 </div>
 {% comment %} {{form|crispy}} {% endcomment %}

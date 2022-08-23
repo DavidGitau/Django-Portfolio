@@ -1,0 +1,42 @@
+<ul class="navbar-nav ml-auto text-center">
+    <li class="nav-item active">
+        <a class="nav-link" href="{% url plat|add:':home' %}">Home</a>
+    </li>
+    <li class="nav-item @@about">
+        <a class="nav-link" href="{% url plat|add:':about' %}">About</a>
+    </li>
+    <li class="nav-item @@courses">
+        <a class="nav-link" href="{% url plat|add:':course' %}">COURSES</a>
+    </li>
+    <li class="nav-item @@events">
+        <a class="nav-link" href="{% url plat|add:':event' %}">EVENTS</a>
+    </li>
+    <li class="nav-item @@blog">
+        <a class="nav-link" href="{% url plat|add:':blog' %}">BLOG</a>
+    </li>
+    <li class="nav-item dropdown view">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Pages
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{% url plat|add:':teacher' %}">Teacher</a>
+        <a class="dropdown-item" href="{% url plat|add:':teacher-single' 1 %}">Teacher Single</a>
+        <a class="dropdown-item" href="{% url plat|add:':notice' %} ">Notice</a>
+        <a class="dropdown-item" href="{% url plat|add:':notice-single' 1 %}">Notice Details</a>
+        <a class="dropdown-item" href="{% url plat|add:':research' %}">Research</a>
+        <a class="dropdown-item" href="{% url plat|add:':scholarship' %}">Scholarship</a>
+        <a class="dropdown-item" href="{% url plat|add:':course-single' 1 %}">Course Details</a>
+        <a class="dropdown-item" href="{% url plat|add:':event-single' 1 %}">Event Details</a>
+        <a class="dropdown-item" href="{% url plat|add:':blog-single' 1 %}">Blog Details</a>
+        </div>
+    </li>
+    <li class="nav-item @@contact">
+        <a class="nav-link" href="{% url plat|add:':contact' %}">CONTACT</a>
+    </li>
+    {% if user.is_superuser %}
+    <li class="nav-item @@contact">
+        <a class="nav-link" href="{% url 'backend:home' %}">BACKEND</a>
+    {% endif %}
+    </li>
+    </ul>

@@ -36,14 +36,15 @@ educenter/{% load static %}
 <body>
 {% comment %} {% include "educenter/core/common/preloader.html" %} {% endcomment %}
 
-{% if plat == 'be' %}
-{% include "educenter/be/header.html" %}
-{% else %}
 {% include "educenter/core/base/header.html" %}
-{% endif %}
 
 {% include "account/modal.html" %}
 {% block content %}{% endblock content %}
+{% if plat == 'backend' %}
+{% if platd != 'backend-d' %}
+{% include 'educenter/be/form.html' %}
+{% endif %}
+{% endif %}
 {% include "educenter/core/base/footer.html" %}
 
 

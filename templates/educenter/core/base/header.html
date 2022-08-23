@@ -1,36 +1,7 @@
 {% load static %}
 {% block header %}
 <header class="fixed-top header">
-  <!-- top header -->
-  <div class="top-header py-2 bg-white">
-    <div class="container">
-      <div class="row no-gutters">
-        <div class="col-lg-4 text-center text-lg-left">
-          <a class="text-color mr-3" href="callto:+443003030266"><strong>CALL</strong> +44 300 303 0266</a>
-          <ul class="list-inline d-inline">
-            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
-            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-linkedin"></i></a></li>
-            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
-          </ul>
-        </div>
-        <div class="col-lg-8 text-center text-lg-right">
-          <ul class="list-inline">
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{% url 'educenter:notice' %}">notice</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{% url 'educenter:research' %}">research</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{% url 'educenter:scholarship' %}">SCHOLARSHIP</a></li>
-            {% if user.is_authenticated %}
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#logoutModal">logout</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="{% url 'account:profile' %}">{{user}}</a></li>
-            {% else %}
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#loginModal">log</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#signupModal">register</a></li>
-            {% endif %}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% include 'educenter/core/base/topheader.html' %}
   <!-- navbar -->
   <div class="navigation w-100">
     <div class="container">
@@ -42,48 +13,11 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navigation">
-          <ul class="navbar-nav ml-auto text-center">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'educenter:home' %}">Home</a>
-            </li>
-            <li class="nav-item @@about">
-              <a class="nav-link" href="{% url 'educenter:about' %}">About</a>
-            </li>
-            <li class="nav-item @@courses">
-              <a class="nav-link" href="{% url 'educenter:course' %}">COURSES</a>
-            </li>
-            <li class="nav-item @@events">
-              <a class="nav-link" href="{% url 'educenter:event' %}">EVENTS</a>
-            </li>
-            <li class="nav-item @@blog">
-              <a class="nav-link" href="{% url 'educenter:blog' %}">BLOG</a>
-            </li>
-            <li class="nav-item dropdown view">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Pages
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'educenter:teacher' %}">Teacher</a>
-                <a class="dropdown-item" href="{% url 'educenter:teacher-single' 1 %}">Teacher Single</a>
-                <a class="dropdown-item" href="{% url 'educenter:notice' %} ">Notice</a>
-                <a class="dropdown-item" href="{% url 'educenter:notice-single' 1 %}">Notice Details</a>
-                <a class="dropdown-item" href="{% url 'educenter:research' %}">Research</a>
-                <a class="dropdown-item" href="{% url 'educenter:scholarship' %}">Scholarship</a>
-                <a class="dropdown-item" href="{% url 'educenter:course-single' 1 %}">Course Details</a>
-                <a class="dropdown-item" href="{% url 'educenter:event-single' 1 %}">Event Details</a>
-                <a class="dropdown-item" href="{% url 'educenter:blog-single' 1 %}">Blog Details</a>
-              </div>
-            </li>
-            <li class="nav-item @@contact">
-              <a class="nav-link" href="{% url 'educenter:contact' %}">CONTACT</a>
-            </li>
-            {% if user.is_superuser %}
-            <li class="nav-item @@contact">
-              <a class="nav-link" href="{% url 'backend:home' %}">BACKEND</a>
-            </li>
-            {% endif %}
-          </ul>
+        {% if plat == 'educenter' %}
+        {% include 'educenter/core/base/nav.html' %}
+        {% else %}
+        {% include 'educenter/be/nav.html' %}
+        {% endif %}
         </div>
       </nav>
     </div>

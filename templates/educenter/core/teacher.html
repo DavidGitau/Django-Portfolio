@@ -7,8 +7,8 @@ educenter/{% extends 'educenter/core/base.html' %}
 
 {% include "educenter/core/teacher/teacher-list.html" %}
 
-{% if plat == 'be' %}
+{% comment %} {% if plat == 'be' %}
 {% include 'educenter/be/form.html' %}
-{% endif %}
+{% endif %} {% endcomment %}
 
 {% endblock content %}

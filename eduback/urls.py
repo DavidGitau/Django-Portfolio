@@ -89,62 +89,25 @@ li2 = [
     TeacherForm
 ]
 
-
-# li3 = [
-#     'be/about.html',
-#     'be/blog.html',
-#     'be/course.html',
-#     'be/event.html',
-#     'be/funfact.html',
-#     'be/interest.html',
-#     'be/notice.html',
-#     'be/requirement.html',
-#     'be/research.html',
-#     'be/scholarship.html',
-#     'be/school.html',
-#     'be/teacher.html'
-# ]
-
-length = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+length1 = [0, 1, 2, 3, 6, 8, 9, 11]
+length2 = [4, 5, 7, 10]
 
 app_name = 'backend'
 
 
 urlpatterns = [
     path('', home, name='home'),
-    path('account/', include('account.urls', namespace='b-account'))
-    # path('about/', about, name='about'),
-    # path(
-    #     'about/',
-    #     CustomCreate.as_view(
-    #         model = li1[0],
-    #         form_class = li2[0],
-    #         template_name = li3[0]
-    #     ),
-    #     name = 'about'
-    # ),
-
-    # path('blog', blog, name='blog'),
-    # # path(
-
-    # # ),
-
-    # path('course/', course, name='course'),
-    # path('event/', event, name='event'),
-    # path('notice/', notice, name='notice'),
-    # path('research/',research , name='research'),
-    # path('scholarship/', scholarship, name='scholarship'),
-    # path('teacher/', teacher, name='teacher'),
+    path('account/', include('account.urls', namespace='b-account')),
 ]
 
-for l in range(12):
+for l in length1:
     urlpatterns.append(
         path(
                 f"{li0[l]}/",
                 CustomCreate.as_view(
                     model = li1[l],
                     form_class = li2[l],
-                    template_name = f"educenter/be/{li0[l]}.html", 
+                    template_name = f"educenter/core/{li0[l]}.html", 
                     success_url = f"#",
                 ),
                 name = f"{li0[l]}"
@@ -152,12 +115,35 @@ for l in range(12):
     ),
     urlpatterns.append(
         path(
-                f"{li0[l]}/<int:id>/",
+                f"{li0[l]}/<int:pk>/",
                 CustomDetail.as_view(
                     model = li1[l],
                     template_name = f"educenter/core/{li0[l]}-single.html", 
                 ),
-                name = f"{li0[l]}"
+                name = f"{li0[l]}-single"
             )
     )
 
+for l in length2:
+    urlpatterns.append(
+        path(
+                f"{li0[l]}/",
+                CustomCreate.as_view(
+                    model = li1[l],
+                    form_class = li2[l],
+                    template_name = "educenter/be/list.html", 
+                    success_url = f"#",
+                ),
+                name = f"{li0[l]}"
+            )
+    ),
+    urlpatterns.append(
+        path(
+                f"{li0[l]}/<int:pk>/",
+                CustomDetail.as_view(
+                    model = li1[l],
+                    template_name = f"educenter/be/detail.html", 
+                ),
+                name = f"{li0[l]}-single"
+            )
+    )

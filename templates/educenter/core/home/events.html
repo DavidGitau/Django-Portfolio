@@ -9,7 +9,7 @@
           <h2 class="mb-0 text-nowrap mr-3">Upcoming Events</h2>
           <div class="border-top w-100 border-primary d-none d-sm-block"></div>
           <div>
-            <a href="{% url 'educenter:events'%}" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block">see all</a>
+            <a href="{% url plat|add:':events'%}" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block">see all</a>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@
       <div class="card-body">
         <!-- location -->
         <p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
-        <a href="{% url 'educenter:event-single'%}"><h4 class="card-title">Lorem ipsum dolor amet, consectetur adipisicing.</h4></a>
+        <a href="{% url plat|add:':event-single'%}"><h4 class="card-title">Lorem ipsum dolor amet, consectetur adipisicing.</h4></a>
       </div>
     </div>
   </div>
@@ -39,7 +39,7 @@
       <div class="card-body">
         <!-- location -->
         <p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
-        <a href="{% url 'educenter:event-single'%}"><h4 class="card-title">Lorem ipsum dolor amet, consectetur adipisicing.</h4></a>
+        <a href="{% url plat|add:':event-single'%}"><h4 class="card-title">Lorem ipsum dolor amet, consectetur adipisicing.</h4></a>
       </div>
     </div>
   </div>
@@ -53,7 +53,7 @@
       <div class="card-body">
         <!-- location -->
         <p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
-        <a href="{% url 'educenter:event-single'%}"><h4 class="card-title">Lorem ipsum dolor amet, consectetur adipisicing.</h4></a>
+        <a href="{% url plat|add:':event-single'%}"><h4 class="card-title">Lorem ipsum dolor amet, consectetur adipisicing.</h4></a>
       </div>
     </div>
   </div>
@@ -61,7 +61,7 @@
     <!-- mobile see all button -->
     <div class="row">
       <div class="col-12 text-center">
-        <a href="{% url 'educenter:course'%}" class="btn btn-sm btn-primary-outline d-sm-none d-inline-block">sell all</a>
+        <a href="{% url plat|add:':course'%}" class="btn btn-sm btn-primary-outline d-sm-none d-inline-block">sell all</a>
       </div>
     </div>
   </div>

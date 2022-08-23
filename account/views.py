@@ -41,10 +41,10 @@ def create_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('educenter:home')
+    return redirect('../../')
 
 def profile_view(request):
-    return render(request,'educenter/profile/profile.html')
+    return render(request,'educenter/profile/profile.html', {'plat':'educenter'})
 
 def profile_edit(request):
     form = EditForm
@@ -55,6 +55,11 @@ class EditUser(UpdateView):
     form_class = EditForm
     template_name = 'educenter/profile/edit.html'
     success_url = '../'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['plat'] = 'educenter'
+        return context
 
 class ResetPass(UpdateView):
     model = User

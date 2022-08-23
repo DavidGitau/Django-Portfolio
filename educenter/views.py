@@ -42,6 +42,7 @@ def home_view(request):
         'teacher_list': teacher_list,
         'teacher_detail': teacher_detail,
         'blog_reccommend': blog_reccommend,
+        'plat' : 'educenter',
     }
     return render(request, 'educenter/core/home.html', context)
 
@@ -59,6 +60,7 @@ def about_view(request):
         'about': about,
         'teacher_list': teacher_list,
         'teacher_detail': teacher_detail,
+        'plat': 'educenter',
     }
     return render(request, 'educenter/core/about.html', context)
 
@@ -70,6 +72,7 @@ def contact_view(request, li):
         }
     context = {
         'title': title,
+        'plat' : 'educenter',
     }
     return render(request, 'educenter/core/'+li, context)
 
@@ -86,6 +89,7 @@ class CustomList(ListView):
         context = super().get_context_data(**kwargs)
         m = self.object_list.get(id=1)
         context['title'] = m.header_about
+        context['plat'] = 'educenter'
         return context
 
 class CustomDetail(DetailView):
@@ -96,6 +100,7 @@ class CustomDetail(DetailView):
             context['event_reccommend'] = Event.objects.filter(id__lt=4)
             context['title'] = self.object.header_about            
             context['course_reccommend'] = Course.objects.filter(Q(c_school=self.object.c_school)&~Q(id=self.object.id))
+            context['plat'] = 'educenter'
         except AttributeError:
             pass
         return context

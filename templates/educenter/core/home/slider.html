@@ -1,7 +1,7 @@
 {% load static %}
 
 <!-- hero slider -->
-<section class="hero-section overlay bg-cover" data-background="{% static 'images/banner/banner-1.jpg'%}">
+<section class="hero-section overlay bg-cover" data-background="{% static 'images/banner/banner-1.jpg'%}" style="height:920px">
   <div class="container">
     <div class="hero-slider">
       <!-- slider item -->
@@ -13,7 +13,7 @@
               tempor
               incididunt ut labore et
               dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer</p>
-            <a href="{% url 'educenter:contact'%}" class="btn btn-primary" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Apply now</a>
+            <a href="{% url plat|add:':contact'%}" class="btn btn-primary" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Apply now</a>
           </div>
         </div>
       </div>
@@ -26,7 +26,7 @@
               tempor
               incididunt ut labore et
               dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer</p>
-            <a href="{% url 'educenter:contact'%}" class="btn btn-primary" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".7">Apply now</a>
+            <a href="{% url plat|add:':contact'%}" class="btn btn-primary" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".7">Apply now</a>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
               tempor
               incididunt ut labore et
               dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer</p>
-            <a href="{% url 'educenter:contact'%}" class="btn btn-primary" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="zoomIn" data-delay-in=".7">Apply now</a>
+            <a href="{% url plat|add:':contact'%}" class="btn btn-primary" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="zoomIn" data-delay-in=".7">Apply now</a>
           </div>
         </div>
       </div>

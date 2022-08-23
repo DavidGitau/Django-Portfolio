@@ -13,7 +13,7 @@
         <img class="img-fluid w-100" src="{{object.image_url.url}}" alt="teacher">
       </div>
       
-                  <a href="{% url 'educenter:course-single' object.id %}" class="btn btn-primary btn-sm">Apply now</a>
+                  <a href="{% url plat|add:':course-single' object.id %}" class="btn btn-primary btn-sm">Apply now</a>
 
       <div class="col-md-6 mb-5">
         <h3>{{object.name}}</h3>
@@ -61,12 +61,12 @@
               <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
               <li class="list-inline-item"><a class="text-color" href="#">{{c.c_school}}</a></li>
             </ul>
-            <a href="{% url 'educenter:course-single' object.id %}">
+            <a href="{% url plat|add:':course-single' object.id %}">
               <h4 class="card-title">{{c.name}}</h4>
             </a>
             <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna.</p>
-            <a href="{% url 'educenter:course-single' object.id %}" class="btn btn-primary btn-sm">Apply now</a>
+            <a href="{% url plat|add:':course-single' object.id %}" class="btn btn-primary btn-sm">Apply now</a>
           </div>
         </div>
       </div>
