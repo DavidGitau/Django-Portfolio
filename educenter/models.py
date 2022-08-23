@@ -15,7 +15,8 @@ class CommonInfo(models.Model):
         return self.name
 
 class About(CommonInfo):
-       header_about = None
+    header_about = None
+    model_name = models.CharField(max_length=100,default='about')
 
 class Blog(CommonInfo):
     name = None
@@ -26,6 +27,7 @@ class Blog(CommonInfo):
     post_comments = models.IntegerField()
     heading = models.CharField(max_length=255)
     image_url = models.ImageField(upload_to='images/blog/', null=True)
+    model_name = models.CharField(max_length=100,default='blog')
     class Meta:
         ordering = ['heading']
         
@@ -41,6 +43,7 @@ class Course(CommonInfo):
     fees = models.FloatField(null=True, blank=True)
     funding = models.TextField(null=True, blank=True) 
     image_url = models.ImageField(upload_to='images/courses/', null=True)
+    model_name = models.CharField(max_length=100,default='course')
 
 class Event(CommonInfo):
     location = models.CharField(max_length=255)
@@ -49,32 +52,40 @@ class Event(CommonInfo):
     e_speaker = models.ManyToManyField('Teacher')
     fee = models.IntegerField()
     image_url = models.ImageField(upload_to='images/events/', null=True)
+    model_name = models.CharField(max_length=100,default='event')
 
 class FunFact(CommonInfo):
     content = None
     number = models.IntegerField()
+    model_name = models.CharField(max_length=100,default='funfact')
 
 class Interest(CommonInfo):
     content = None
+    model_name = models.CharField(max_length=100,default='interest')
 
 class Notice(CommonInfo):
     notice_date = models.DateField()
+    model_name = models.CharField(max_length=100,default='notice')
 
 class Requirement(CommonInfo):
     content = None
+    model_name = models.CharField(max_length=100,default='requirement')
 
 class Research(CommonInfo):
     image_url = models.ImageField(upload_to='images/research/', null=True)
+    model_name = models.CharField(max_length=100,default='research')
 
 class School(CommonInfo):
     content = None
     header_about = None
+    model_name = models.CharField(max_length=100,default='school')
 
 class Scholarship(CommonInfo):
     content = None
     s_course = models.ForeignKey('School', null=True, on_delete=models.CASCADE)
     s_requirement = models.ManyToManyField('Requirement')
     image_url = models.ImageField(upload_to='images/scholarship/', null=True)
+    model_name = models.CharField(max_length=100,default='scholarship')
 
 class Teacher(CommonInfo):
     education = models.CharField(max_length=255)
@@ -86,3 +97,4 @@ class Teacher(CommonInfo):
     address = models.CharField(max_length=100, default='Default, Setting')
     t_courses = models.ManyToManyField('Course')
     image_url = models.ImageField(upload_to='images/teachers/', null=True)
+    model_name = models.CharField(max_length=100,default='teacher')

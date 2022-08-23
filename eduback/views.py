@@ -78,3 +78,13 @@ class CustomDetail(DetailView):
         context['platd'] = 'backend-d'
 
         return context
+
+class CustomEdit(UpdateView):
+    fields = '__all__'
+    template_name = 'educenter/be/edit.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['plat'] = 'backend'
+        context['platd'] = 'backend-d'
+        return context

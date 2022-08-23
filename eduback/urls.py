@@ -33,6 +33,7 @@ from .views import (
     home,
     CustomCreate,
     CustomDetail,
+    CustomEdit,
     # about, 
     # blog, 
     # course, 
@@ -146,4 +147,16 @@ for l in length2:
                 ),
                 name = f"{li0[l]}-single"
             )
-    )
+    ),
+
+for l in range(12):
+    urlpatterns.append(
+        path(
+                f"{li0[l]}/<int:pk>/edit",
+                CustomEdit.as_view(
+                    model = li1[l],
+                    success_url = f"../",
+                ),
+                name = f"edit"
+            )
+    ),
