@@ -14,7 +14,11 @@
           <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><i class="ti-book mr-2"></i>{{object.post_read}}</li>
           <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><i class="ti-share mr-2"></i>{{object.post_share}}</li>
           <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><a class="text-light" href="#"><i class="ti-comments mr-2"></i>{{object.post_comments}}</a></li>
+         {% if plat == 'backend' %}
+          <a class="btn btn-primary" href="{% url plat|add:':'|add:object.model_name|add:'-edit' object.id %}" style="float:right;">Edit</a>
+        {% endif %}
         </ul>
+
       </div>
       <!-- border -->
       <div class="col-12 mt-4">

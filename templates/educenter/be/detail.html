@@ -9,11 +9,9 @@
         <p>{{object.content | slice:"0:416"}}</p>
         <p>{{object.content | slice:"416:"}}</p>
       </div>
-        <a class="btn btn-primary" href="{% url plat|add:':edit' object.id %}">Edit</a>
-
-      
+        <a class="btn btn-primary" href="{% url plat|add:':'|add:object.model_name|add:'-edit' object.id %}">Edit</a>
     </div>
   </div>
 </section>
-{% include 'educenter/be/form.html' %}
+{% comment %} {% include 'educenter/be/form.html' %} {% endcomment %}
 {% endblock %}

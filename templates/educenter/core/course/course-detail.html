@@ -46,7 +46,11 @@
         </ul>
       </div>
       <div class="col-xl-3 text-sm-right text-left order-sm-2 order-3 order-xl-3 col-sm-6 mb-4 mb-xl-0">
-        <a href="#" class="btn btn-primary">Apply now</a>
+        {% if plat == 'backend' %}
+            <a class="btn btn-primary" href="{% url plat|add:':'|add:object.model_name|add:'-edit' object.id %}">Edit</a>
+        {% else %}
+            <a href="#" class="btn btn-primary">Apply now</a>
+        {% endif %}
       </div>
       <!-- border -->
       <div class="col-12 mt-4 order-4">

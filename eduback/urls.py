@@ -91,7 +91,7 @@ li2 = [
 ]
 
 length1 = [0, 1, 2, 3, 6, 8, 9, 11]
-length2 = [4, 5, 7, 10]
+length2 = [4, 5, 7, 8, 9, 10]
 
 app_name = 'backend'
 
@@ -114,30 +114,32 @@ for l in length1:
                 name = f"{li0[l]}"
             )
     ),
-    urlpatterns.append(
-        path(
-                f"{li0[l]}/<int:pk>/",
-                CustomDetail.as_view(
-                    model = li1[l],
-                    template_name = f"educenter/core/{li0[l]}-single.html", 
-                ),
-                name = f"{li0[l]}-single"
-            )
-    )
+    if l not in length2:
+        urlpatterns.append(
+            path(
+                    f"{li0[l]}/<int:pk>/",
+                    CustomDetail.as_view(
+                        model = li1[l],
+                        template_name = f"educenter/core/{li0[l]}-single.html", 
+                    ),
+                    name = f"{li0[l]}-single"
+                )
+        )
 
 for l in length2:
-    urlpatterns.append(
-        path(
-                f"{li0[l]}/",
-                CustomCreate.as_view(
-                    model = li1[l],
-                    form_class = li2[l],
-                    template_name = "educenter/be/list.html", 
-                    success_url = f"#",
-                ),
-                name = f"{li0[l]}"
-            )
-    ),
+    if l not in length1:
+        urlpatterns.append(
+            path(
+                    f"{li0[l]}/",
+                    CustomCreate.as_view(
+                        model = li1[l],
+                        form_class = li2[l],
+                        template_name = "educenter/be/list.html", 
+                        success_url = f"#",
+                    ),
+                    name = f"{li0[l]}"
+                )
+        ),
     urlpatterns.append(
         path(
                 f"{li0[l]}/<int:pk>/",
@@ -157,6 +159,6 @@ for l in range(12):
                     model = li1[l],
                     success_url = f"../",
                 ),
-                name = f"edit"
+                name = f"{li0[l]}-edit"
             )
     ),

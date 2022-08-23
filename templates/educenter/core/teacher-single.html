@@ -12,9 +12,6 @@
       <div class="col-md-5 mb-5">
         <img class="img-fluid w-100" src="{{object.image_url.url}}" alt="teacher">
       </div>
-      
-                  <a href="{% url plat|add:':course-single' object.id %}" class="btn btn-primary btn-sm">Apply now</a>
-
       <div class="col-md-6 mb-5">
         <h3>{{object.name}}</h3>
         <h6 class="text-color">{{object.education}}</h6>
@@ -28,21 +25,24 @@
               <li class="mb-3"><a class="text-color" href="#"><i class="ti-facebook mr-2"></i>{{object.social_media}}</a></li>
               <li class="mb-3"><a class="text-color" href="#"><i class="ti-twitter-alt mr-2"></i>{{object.social_media}}</a></li>
               <li class="mb-3"><a class="text-color" href="#"><i class="ti-skype mr-2"></i>{{object.social_media}}</a></li>
-              <li class="mb-3"><a class="text-color" href="#"><i class="ti-world mr-2"></i>johnDoe.com</a></li>
+              <li class="mb-3"><a class="text-color" href="#"><i class="ti-world mr-2"></i>{{object.social_media}}.com</a></li>
               <li class="mb-3"><a class="text-color" href="#"><i class="ti-location-pin mr-2"></i>{{object.address}}</a></li>
             </ul>
           </div>
           <div class="col-md-6">
             <h4 class="mb-4">SUMMARY OF ACTIVITIES/INTERESTS</h4>
             <ul class="list-unstyled">
-              <li class="mb-3">Computer Networking</li>
-              <li class="mb-3">Computer Security</li>
-              <li class="mb-3">Human Computer Interfacing</li>
+              {% for i in object.t_interest.all %}
+              <li class="mb-3">{{i.name}}</li>
+              {% endfor %}
             </ul>
           </div>
         </div>
       </div>
       <div class="col-12">
+        {% if plat == 'backend' %}
+            <a class="btn btn-primary" href="{% url plat|add:':'|add:object.model_name|add:'-edit' object.id %}">Edit</a>
+        {% endif %}<br><br>
         <h4 class="mb-4">BIOGRAPHY</h4>
         <p class="mb-5">{{object.content | slice:"0:600"}}</p>
       </div>

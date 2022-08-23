@@ -96,11 +96,12 @@ class CustomDetail(DetailView):
     def get_context_data(self, **kwargs):
         try:
             context = super().get_context_data(**kwargs)
+            context['plat'] = 'educenter'
             context['blog_reccommend'] = Blog.objects.filter(post_date__lt=date(2022,4,21))
             context['event_reccommend'] = Event.objects.filter(id__lt=4)
             context['title'] = self.object.header_about            
             context['course_reccommend'] = Course.objects.filter(Q(c_school=self.object.c_school)&~Q(id=self.object.id))
-            context['plat'] = 'educenter'
+            
         except AttributeError:
             pass
         return context
